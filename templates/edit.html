@@ -14,11 +14,11 @@
     <form action="{{ url_for('update', id=employee[0]) }}" method="POST" class="form-box">
         <input type="text" name="name" value="{{ employee[1] }}" placeholder="Enter Name" required>
 
-        <input type="number" name="emp_id" value="{{ employee[2] }}" placeholder="Enter Employee ID" required>
+        <input type="text" name="emp_id" value="{{ employee[2] }}" placeholder="Enter Employee ID" required>
 
-        <input type="number" name="salary" value="{{ employee[3] }}" placeholder="Enter Salary" required>
+        <input type="text" name="salary" value="{{ employee[3] }}" placeholder="Enter Salary" required>
 
-        <input type="number" name="phone_number" value="{{ employee[4] }}" placeholder="Enter Phone Number" required>
+        <input type="text" name="phone_number" value="{{ employee[4] }}" placeholder="Enter Phone Number" required>
 
         <button type="submit">Update Employee</button>
     </form>
