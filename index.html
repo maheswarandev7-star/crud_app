@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Employee CRUD</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+
+<div class="container">
+    <h1>Employee CRUD App</h1>
+
+    <form action="/add" method="POST" class="form-box">
+        <input type="text" name="name" placeholder="Enter Name" required>
+        <input type="number" name="emp_id" placeholder="User ID" required>
+        <input type="number" name="salary" placeholder="Salary" required>
+        <input type="number" name="phone_number" placeholder="Phone Number" >
+        <button type="submit">Add Employee</button>
+    </form>
+
+    <table>
+        <tr>
+            <th>S.NO</th>
+            <th>Name</th>
+            <th>EMP ID</th>
+            <th>Salary</th>
+            <th>Phone</th>
+            
+        </tr>
+
+        {% for emp in employees %}
+        <tr>
+            <td>{{ emp[0] }}</td>
+            <td>{{ emp[1] }}</td>
+            <td>{{ emp[2] }}</td>
+            <td>{{ emp[3] }}</td>
+            <td>{{ emp[4] }}</td>
+            <td>
+                <a href="/edit/{{ emp[0] }}" class="edit">Edit</a>
+                <a href="/delete/{{ emp[0] }}" class="delete" onclick="return confirm('Are you sure?')">Delete</a>
+            </td>
+        </tr>
+        {% endfor %}
+    </table>
+</div>
+
+</body>
+</html>
